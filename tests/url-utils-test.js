@@ -91,7 +91,13 @@ vows.describe("URL normalize test suite").addBatch({
 		}
 	},
 	"If there is a hash fragment": {
-		topic: normalize("http://example.com/#hash"),
+		topic: normalize("http://example.com/#Foobar"),
+		"then keep it": function(url) {
+			assert.equal(url, "http://example.com/#Foobar");
+		}
+	},
+	"If there is an empty hash fragment": {
+		topic: normalize("http://example.com/#"),
 		"then remove it": function(url) {
 			assert.equal(url, "http://example.com/");
 		}
