@@ -1,0 +1,24 @@
+{
+    "name": "node-url-utils",
+    "description": "This node.js module provides several utility methods that can be useful while working with URLs.",
+    "version": "0.1.0",
+    "homepage": "https://github.com/webholics/node-url-utils",
+    "author": {
+        "name": "Mario Volke",
+        "url": "http://mariovolke.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/webholics/node-url-utils.git"
+    },
+    "bugs": {
+        "url": "https://github.com/webholics/node-url-utils/issues"
+    },
+    "engines" : {
+        "node" : ">=0.2.x"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "vows": "~0.7.0"
+    }
+}
