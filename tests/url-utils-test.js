@@ -67,9 +67,17 @@ vows.describe("URL normalize test suite").addBatch({
 		}
 	},
 	"If the query contains utm_* keys": {
-		topic: normalize("http://example.com/?utm_source=foobar&utm_medium=foobar"),
+		topic: normalize("http://example.com/?utm_source=foobar&utm_medium=foobar&utm_term=foobar&utm_content=foobar&utm_campaign=foobar"),
 		"then remove them": function(url) {
 			assert.equal(url, "http://example.com/");
+		}
+	},
+	"If there are additional keys to remove": {
+		topic: normalize("http://example.com/?foo=bar1&foo=bar2&key1=val1&key2=val2", {
+			removeKeys: ["foo", "key2"]
+		}),
+		"then remove them": function(url) {
+			assert.equal(url, "http://example.com/?key1=val1");
 		}
 	},
 	"If the query contains uppercase keys": {

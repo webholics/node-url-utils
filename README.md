@@ -18,6 +18,9 @@ This module is still under development. There are some utility methods missing (
 
 	var url = require("./lib/url-utils");
 	console.log(url.normalize("http://example.com/dir/../dir"));
+	console.log(url.normalize("http://example.com/?important=true&random=358103412461", {
+		removeKeys: ["random"]
+	}));
 	console.log(url.equals("http://example.com", "http://example.com:80/"));
 
 In order to run the tests, install `Vows` and run with `make`:
