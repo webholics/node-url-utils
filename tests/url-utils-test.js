@@ -102,6 +102,12 @@ vows.describe("URL normalize test suite").addBatch({
 			assert.equal(url, "http://example.com/");
 		}
 	},
+	"If query and hash fragment use RFC 1738 plus encoding to represent spaces": {
+		topic: normalize("http://example.com/hello+world/?a=b+c#d+e"),
+		"then replace these with RFC 3986 percent encoding": function(url) {
+			assert.equal(url, "http://example.com/hello+world/?a=b%20c#d%20e");
+		}
+	},
 	"If an HTTP-URL contains the default port": {
 		topic: normalize("http://example.com:80/"),
 		"then remove it": function(url) {
