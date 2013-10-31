@@ -29,6 +29,7 @@ In order to run the tests, install `Vows` and run with `make`:
 ## Credits
 
 - Mario Volke ([mariovolke.com](http://mariovolke.com))
+- Lovell Fuller ([lovell.info](http://lovell.info/))
 
 ## License 
 
