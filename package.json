@@ -1,7 +1,7 @@
 {
     "name": "node-url-utils",
     "description": "This node.js module provides several utility methods that can be useful while working with URLs.",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "homepage": "https://github.com/webholics/node-url-utils",
     "author": {
         "name": "Mario Volke",
