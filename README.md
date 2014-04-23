@@ -33,8 +33,9 @@ In order to run the tests, install `Vows` and run with `make`:
 
 - Mario Volke ([mariovolke.com](http://mariovolke.com))
 - Lovell Fuller ([lovell.info](http://lovell.info/))
+- Mitar ([github.com/mitar](https://github.com/mitar))
 
-## License 
+## License
 
 (The MIT License)
 
