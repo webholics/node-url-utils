@@ -48,8 +48,14 @@ vows.describe("URL normalize test suite").addBatch({
 			assert.equal(url, "http://example.com/%3Aa%7D%7B/");
 		}
 	},
+	"If path contains unneeded escape sequences": {
+		topic: normalize("http://www.example.com/%7Eusername/"),
+		"then decode them": function(url) {
+			assert.equal(url, "http://www.example.com/~username/");
+		}
+	},
 	"If the URL points to an index file": {
-		topic: normalize("http://example.com/index.html"),
+		topic: normalize("http://example.com/index.html", {removeIndex: true}),
 		"then remove the file from the URL": function(url) {
 			assert.equal(url, "http://example.com/");
 		}
@@ -110,10 +116,10 @@ vows.describe("URL normalize test suite").addBatch({
 			assert.equal(url, "http://example.com/");
 		}
 	},
-	"If query and hash fragment use RFC 1738 plus encoding to represent spaces": {
+	"If query use RFC 1738 plus encoding to represent spaces": {
 		topic: normalize("http://example.com/hello+world/?a=b+c#d+e"),
 		"then replace these with RFC 3986 percent encoding": function(url) {
-			assert.equal(url, "http://example.com/hello+world/?a=b%20c#d%20e");
+			assert.equal(url, "http://example.com/hello%2Bworld/?a=b%20c#d+e");
 		}
 	},
 	"If an HTTP-URL contains the default port": {
